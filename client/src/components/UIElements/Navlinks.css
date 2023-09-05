@@ -1,0 +1,24 @@
+.main-header li {
+    display: inline-block;
+    margin: 0 20px 0 0;
+    background-color: white;
+    text-shadow: 3cm;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.main-header a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.main-header li:hover {
+    background-color: #d8d52b;
+}
+
+.main-header-link a.active {
+    background: #d8d52b;
+    border-color: #292929;
+    color: #292929;
+}

@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "axios": "^1.5.0",
+    "react-router-dom": "^6.15.0"
+  },
+  "name": "dummyproject",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server-dependencies": "npm install",
+    "client-dependencies": "npm install --prefix forntend",
+    "install-all-deps": "concurrently \"npm run server-dependencies\" \"npm run client-dependencies\"",
+    "install-server": "npm --prefix ./server install ./server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

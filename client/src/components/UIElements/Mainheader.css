@@ -1,0 +1,32 @@
+.main-header {
+    overflow: hidden;
+    background-color: #6E6E6E;
+    display: block;
+    width: 100%;
+}
+
+.main-header a {
+    float: left;
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 25px;
+    border-radius: 5px;
+}
+
+.main-header_logo a {
+    margin: 0px 0 0 70px;
+    padding: auto;
+    font-size: xx-large;
+    font-family: 'Courier New', Courier, monospace;
+    background-image: linear-gradient(to right, #bdc3c7, #2c3e50);
+    border: 5px outset black;
+}
+
+
+.navigation-links {
+    float: right;
+    margin-top: -15px;
+    margin-right: 70px;
+}

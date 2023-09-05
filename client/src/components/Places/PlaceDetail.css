@@ -1,0 +1,14 @@
+.place-detail {
+    margin-top: -150px;
+}
+
+.table-of-content {
+    border: 2px dashed black;
+    width: 500px;
+    height: 300px;
+}
+
+.table-of-content th,
+td {
+    border: 1px solid black;
+}
