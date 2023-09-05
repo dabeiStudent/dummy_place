@@ -1,0 +1,33 @@
+.new-place-form {
+    margin-top: -200px;
+}
+
+label {
+    float: left;
+}
+
+input[type=text],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    float: right;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #d8d52b;
+    color: rgb(0, 0, 0);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #6E6E6E;
+}

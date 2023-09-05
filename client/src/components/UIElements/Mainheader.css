@@ -20,7 +20,9 @@
     padding: auto;
     font-size: xx-large;
     font-family: 'Courier New', Courier, monospace;
-    background-image: linear-gradient(to right, #bdc3c7, #2c3e50);
+    background: #33CCCC;
+    animation: color 9s infinite linear;
+    text-align: center;
     border: 5px outset black;
 }
 
@@ -29,4 +31,30 @@
     float: right;
     margin-top: -15px;
     margin-right: 70px;
+}
+
+@keyframes color {
+    0% {
+        background: #352F44;
+    }
+
+    20% {
+        background: #5C5470;
+    }
+
+    40% {
+        background: #B9B4C7;
+    }
+
+    60% {
+        background: #FAF0E6;
+    }
+
+    80% {
+        background: #B9B4C7;
+    }
+
+    100% {
+        background: #352F44;
+    }
 }

@@ -3,6 +3,7 @@ import axios from "axios";
 import PlaceCard from "./PlaceCard";
 
 import './ShowPlaces.css'
+import Loading from "../UIElements/Loading";
 const ShowPlaces = () => {
     const [places, setPlaces] = useState([]);
 
@@ -15,8 +16,10 @@ const ShowPlaces = () => {
             });
     }, []);
 
-    const placeList =
-        places.length === 0 ? "Loading..." : places.map((place, k) => <PlaceCard place={place} key={k} />);
+    if (places.length === 0) {
+        return <Loading />
+    }
+    const placeList = places.map((place, k) => <PlaceCard place={place} key={k} />);
     return (
         <React.Fragment>
             <div className="title"><h1>ALL PLACES</h1></div>

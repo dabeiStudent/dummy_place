@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import './PlaceDetail.css'
+import Loading from "../UIElements/Loading";
 const PlaceDetail = props => {
     const { id } = useParams();
     const [place, setPlace] = useState({});
@@ -15,6 +16,9 @@ const PlaceDetail = props => {
             });
         window.scrollTo(0, 0);
     }, [id])
+    if (place._id === undefined) {
+        return <Loading />;
+    }
     return (
         <div className="place-detail">
             <table className="table-of-content">
