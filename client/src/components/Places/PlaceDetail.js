@@ -1,32 +1,32 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 
 import './PlaceDetail.css'
 import Loading from "../UIElements/Loading";
 
 const PlaceDetail = props => {
     const { id } = useParams();
+    const navigate = useNavigate();
     const [place, setPlace] = useState({});
     useEffect(() => {
         axios.get(`http://localhost:5000/${id}`)
             .then((res) => {
                 setPlace(res.data);
             }).catch((err) => {
-                console.log('Some error occured');
+                alert("Can't get this book now");
+                window.location = "http://localhost:3000/"
             });
         window.scrollTo(0, 0);
     }, [id])
-    const updatePlaceHandler = () => {
-        window.location = `http://localhost:3000/update-place/${id}`;
-    }
+
     const removePlaceHandler = event => {
         event.preventDefault();
 
         if (window.confirm('Are you sure to delete this place?')) {
             axios.post(`http://localhost:5000/drop-this-place/${id}`)
                 .then((res) => {
-                    window.location = "http://localhost:3000";
+                    navigate('/')
                 })
         }
     }
@@ -57,7 +57,7 @@ const PlaceDetail = props => {
                 </tbody>
             </table>
             <div className="action-place">
-                <button onClick={updatePlaceHandler}>Update</button>
+                <Link to={`/update-place/${id}`}>Update</Link>
                 <button onClick={removePlaceHandler}>Delete</button>
             </div>
         </div>

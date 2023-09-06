@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import './UpdatePlaces.css'
 const UpdatePlaces = () => {
     const { id } = useParams();
+    const navigate = useNavigate();
     const [place, setPlace] = useState({
         title: '',
         description: '',
@@ -38,13 +39,13 @@ const UpdatePlaces = () => {
         axios.post(`http://localhost:5000/update-place/${id}`, data)
             .then((res) => {
                 window.alert('Update successfully');
-                window.location = `http://localhost:3000/${id}`;
+                navigate(`/${id}`);
+            })
+            .catch((err) => {
+                window.alert("Can't update now");
             })
     }
-    const goBackHandler = event => {
-        event.preventDefault();
-        window.location = `http://localhost:3000/${id}`;
-    }
+
     return (
         <div className="update-place-form">
             <form className="form-update" onSubmit={updatePlaceHandler}>
@@ -58,7 +59,7 @@ const UpdatePlaces = () => {
                 <input name="rating" value={place.rating} type="text" required placeholder="Input your place rating here" onChange={onChange} /><br />
 
                 <input type="submit" value="UPDATE PLACE" />
-                <input type="button" value="GO BACK" onClick={goBackHandler} />
+                <Link to={`/${id}`} ><p>GO BACK</p></Link>
             </form>
         </div>
     )

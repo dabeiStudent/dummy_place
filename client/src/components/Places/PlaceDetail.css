@@ -12,3 +12,10 @@
 td {
     border: 1px solid black;
 }
+
+.action-place a {
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+    background-color: white;
+}

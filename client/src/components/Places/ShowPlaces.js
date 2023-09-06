@@ -12,7 +12,7 @@ const ShowPlaces = () => {
             .then((res) => {
                 setPlaces(res.data);
             }).catch((err) => {
-                console.log('Error from ShowPlaces');
+                window.alert("Can't load places from database");
             });
     }, []);
 

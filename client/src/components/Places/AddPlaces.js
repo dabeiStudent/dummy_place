@@ -27,7 +27,7 @@ const AddPlaces = props => {
                 });
             })
             .catch((err) => {
-                console.log('Error in CreateBook!');
+                alert("Can't add place");
             })
     }
     return (
