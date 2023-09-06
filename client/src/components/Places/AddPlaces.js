@@ -42,7 +42,7 @@ const AddPlaces = props => {
                 <label>Rating: </label>
                 <input name="rating" value={place.rating} type="text" required placeholder="Input your place rating here" onChange={onChange} /><br />
 
-                <input type="submit" value="ADD PLACES" />
+                <input type="submit" value="ADD PLACE" />
             </form>
         </div>
     )

@@ -1,12 +1,12 @@
-.new-place-form {
+.update-place-form {
     margin-top: -200px;
 }
 
-.new-place-form label {
+.update-place-form label {
     float: left;
 }
 
-.new-place-form input[type=text],
+.update-place-form input[type=text],
 select {
     width: 100%;
     padding: 12px 20px;
@@ -17,7 +17,7 @@ select {
     float: right;
 }
 
-.new-place-form input[type=submit] {
+.update-place-form input[type=submit] {
     width: 100%;
     background-color: #d8d52b;
     color: rgb(0, 0, 0);
@@ -28,6 +28,17 @@ select {
     cursor: pointer;
 }
 
-.new-place-form input[type=submit]:hover {
+.update-place-form input[type=button] {
+    width: 100%;
+    background-color: #6E6E6E;
+    color: rgb(0, 0, 0);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.update-place-form input[type=submit]:hover {
     background-color: #6E6E6E;
 }
