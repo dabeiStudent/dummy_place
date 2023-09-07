@@ -29,23 +29,14 @@ const Chatplace = () => {
                 });
         }
     }
-    // const textInput = document.getElementById('text-input');
-    // if (textInput) {
-    //     textInput.addEventListener('keydown', (event) => {
-    //         if (event.key === 'Enter') {
-    //             event.preventDefault();
-    //             submitHandler();
-    //         }
-    //     })
-    // }
     return (
         <div className="chat-box">
-            <div className="chat-form">
+            <form className="chat-form" onSubmit={submitHandler}>
                 <div className="chat-element">
                     <input type="text" className="text-area" id="text-input" value={text} name="text-area" onChange={onChange} placeholder="say something..." />
-                    <input type="submit" onClick={submitHandler} value="send" />
+                    <button type="submit" >send</button>
                 </div>
-            </div>
+            </form>
         </div>
     )
 };

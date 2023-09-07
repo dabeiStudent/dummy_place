@@ -20,7 +20,7 @@
     border: 1px ridge black;
 }
 
-.chat-element input[type="submit"] {
+.chat-element button {
     position: absolute;
     width: 15%;
     height: 55px;
