@@ -10,7 +10,10 @@ const NavLinks = () => {
                 <NavLink end to="/">HOME</NavLink>
             </li>
             <li>
-                <NavLink to="/create-new-place" >ADD NEW PLACE</NavLink>
+                <NavLink to="/create-new-place" >ADD-NEW-PLACE</NavLink>
+            </li>
+            <li>
+                <NavLink to="/chat-here">CHAT-WITH-ME</NavLink>
             </li>
         </ul>
     )

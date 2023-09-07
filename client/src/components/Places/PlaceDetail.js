@@ -14,7 +14,7 @@ const PlaceDetail = props => {
             .then((res) => {
                 setPlace(res.data);
             }).catch((err) => {
-                alert("Can't get this book now");
+                alert("Can't get this place now");
                 window.location = "http://localhost:3000/"
             });
         window.scrollTo(0, 0);

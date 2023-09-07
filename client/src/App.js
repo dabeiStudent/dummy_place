@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AddPlaces from './components/Places/AddPlaces';
 import PlaceDetail from './components/Places/PlaceDetail';
 import UpdatePlaces from './components/Places/UpdatePlaces';
+import Chatplace from './components/Chat/Chatplace';
 function App() {
   return (
     <React.Fragment>
@@ -18,6 +19,7 @@ function App() {
               <Route exact path="/:id" element={<PlaceDetail />} />
               <Route exact path="/create-new-place" element={<AddPlaces />} />
               <Route exact path="/update-place/:id" element={<UpdatePlaces />} />
+              <Route exact path="/chat-here" element={<Chatplace />} />
             </Routes>
           </div>
         </div>
