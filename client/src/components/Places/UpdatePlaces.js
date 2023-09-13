@@ -36,9 +36,11 @@ const UpdatePlaces = () => {
             description: place.description,
             rating: place.rating
         };
-        axios.post(`http://localhost:5000/update-place/${id}`, data)
+        axios.post(`http://localhost:5000/update-place/${id}`, data, {
+            withCredentials: true
+        })
             .then((res) => {
-                window.alert('Update successfully');
+                window.alert(res.data.msg);
                 navigate(`/${id}`);
             })
             .catch((err) => {

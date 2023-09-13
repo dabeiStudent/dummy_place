@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { io } from 'socket.io-client';
 
 import './Chatplace.css';
 const Chatplace = () => {
     const [text, setText] = useState('');
+    // const [socket, setSocket] = useState(null);
+    // useEffect(() => {
+    //     const socket = io('http://localhost:2000');
+    //     setSocket(socket);
+    // }, [])
+
     const onChange = event => {
         event.preventDefault();
         setText(event.target.value);

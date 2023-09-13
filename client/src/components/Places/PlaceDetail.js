@@ -24,9 +24,13 @@ const PlaceDetail = props => {
         event.preventDefault();
 
         if (window.confirm('Are you sure to delete this place?')) {
-            axios.post(`http://localhost:5000/drop-this-place/${id}`)
+            axios.post(`http://localhost:5000/drop-this-place/${id}`, id, {
+                withCredentials: true
+            })
                 .then((res) => {
                     navigate('/')
+                }).catch((err) => {
+                    alert(`Can't delete this place`);
                 })
         }
     }

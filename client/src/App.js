@@ -7,7 +7,10 @@ import AddPlaces from './components/Places/AddPlaces';
 import PlaceDetail from './components/Places/PlaceDetail';
 import UpdatePlaces from './components/Places/UpdatePlaces';
 import Chatplace from './components/Chat/Chatplace';
+import Login from './components/Users/Login';
+
 function App() {
+
   return (
     <React.Fragment>
       <Router>
@@ -20,6 +23,7 @@ function App() {
               <Route exact path="/create-new-place" element={<AddPlaces />} />
               <Route exact path="/update-place/:id" element={<UpdatePlaces />} />
               <Route exact path="/chat-here" element={<Chatplace />} />
+              <Route exact path="/user/user-login" element={<Login />} />
             </Routes>
           </div>
         </div>
