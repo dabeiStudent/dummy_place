@@ -34,7 +34,6 @@ const editPlace = (req, res) => {
                 return res.status(400).json({ err: 'Something wrong' });
             }
         }
-
     } else {
         return res.status(401).json({ err: 'Not ADMIN' });
     }

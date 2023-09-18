@@ -4,8 +4,10 @@ const Chat = require('../models/chatsModel');
 
 router.get('/all-chat', (req, res) => {
     Chat.find()
-        .then(chats => res.status(200).json(chats))
-        .catch(err => res.status(400).json({ err: 'no message here' }));
+        .then(chats => {
+            return res.status(200).json(chats)
+        })
+        .catch(err => res.status(400).json({ err: 'something wrong here' }));
 });
 
 router.post('/send-chat', (req, res) => {

@@ -1,15 +1,23 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { io } from 'socket.io-client';
+import io from 'socket.io-client';
+
 
 import './Chatplace.css';
+const ENDPOINT = 'http://localhost:5000';
+var socket, selectedChatCompare;
+
 const Chatplace = () => {
     const [text, setText] = useState('');
+    const [message, setMessage] = useState('Hello');
     // const [socket, setSocket] = useState(null);
-    // useEffect(() => {
-    //     const socket = io('http://localhost:2000');
-    //     setSocket(socket);
-    // }, [])
+
+    useEffect(() => {
+        socket = io.connect(ENDPOINT);
+        socket.on('user-chat', (content) => {
+            setMessage(content.message);
+        })
+    }, []);
 
     const onChange = event => {
         event.preventDefault();
@@ -26,6 +34,8 @@ const Chatplace = () => {
             message: text,
             time: date + "/" + (month + 1) + "/" + year
         }
+        socket.emit('sendmessage', { message: data.message });
+
         if (data.message) {
             axios.post(`http://localhost:5000/chat/send-chat`, data)
                 .then((res) => {
@@ -39,6 +49,9 @@ const Chatplace = () => {
     return (
         <div className="chat-box">
             <form className="chat-form" onSubmit={submitHandler}>
+                <div className="messages">
+                    <h2>{message}</h2>
+                </div>
                 <div className="chat-element">
                     <input type="text" className="text-area" id="text-input" value={text} name="text-area" onChange={onChange} placeholder="say something..." />
                     <button type="submit" >send</button>

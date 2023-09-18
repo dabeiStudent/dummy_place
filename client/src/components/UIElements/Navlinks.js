@@ -20,9 +20,9 @@ const NavLinks = () => {
             <li>
                 <NavLink to="/create-new-place" >ADD-NEW-PLACE</NavLink>
             </li>
-            {/* <li>
+            <li>
                 <NavLink to="/chat-here">CHAT-WITH-ME</NavLink>
-            </li> */}
+            </li>
             <li>
                 <NavLink to="/user/user-login">SIGN-IN</NavLink>
             </li>
