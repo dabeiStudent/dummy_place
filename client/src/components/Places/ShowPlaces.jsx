@@ -8,7 +8,7 @@ const ShowPlaces = () => {
     const [places, setPlaces] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000')
+        axios.get('https://dummyplace-e1c364821935.herokuapp.com/')
             .then((res) => {
                 setPlaces(res.data);
             }).catch((err) => {

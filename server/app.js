@@ -27,7 +27,7 @@ app.use('/user', routerUser);
 app.use('/chat', routerChat);
 
 //server
-const PORT = 8080
+const PORT = 5000
 server.listen(PORT, () => {
     console.log(`Server is now running on PORT: ${PORT}`);
 })
