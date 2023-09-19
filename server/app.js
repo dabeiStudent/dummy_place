@@ -28,8 +28,8 @@ app.use('/chat', routerChat);
 
 //server
 const PORT = 5000;
-const HOST = process.env.HOST || '192.168.1.10'
 const server = app.listen(PORT, HOST, () => {
+    const HOST = process.env.HOST || server.address().address;
     console.log(`Server is now running on PORT: ${PORT} with host: ${HOST}`);
 })
 //database
