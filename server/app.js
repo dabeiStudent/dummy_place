@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const server = require('http').createServer(app);
+
 const routerPlace = require('./api/places');
 const routerChat = require('./api/chats');
 const routerUser = require('./api/users');
@@ -27,10 +27,10 @@ app.use('/user', routerUser);
 app.use('/chat', routerChat);
 
 //server
-const PORT = 5000
-server.listen(PORT, () => {
-    let host = server.address().address;
-    console.log(`Server is now running on PORT: ${PORT} with host: ${host}`);
+const PORT = 5000;
+const HOST = '192.168.1.10'
+const server = app.listen(PORT, HOST, () => {
+    console.log(`Server is now running on PORT: ${PORT} with host: ${HOST}`);
 })
 //database
 connect2DB();

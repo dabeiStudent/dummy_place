@@ -8,7 +8,7 @@ const ShowPlaces = () => {
     const [places, setPlaces] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/')
+        axios.get('http://192.168.1.10:5000/')
             .then((res) => {
                 setPlaces(res.data);
             }).catch((err) => {
