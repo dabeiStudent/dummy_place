@@ -4,15 +4,15 @@ const Place = require('../models/placesModel');
 
 const getAllPlaces = (req, res) => {
     Place.find()
-        .then(places => res.status(200).json(places))
-        .catch(err => res.status(404).json({ err: "No places found !!!" }));
+        .then(places => { return res.status(200).json(places) })
+        .catch(err => { return res.status(404).json({ err: "No places found !!!" }) });
 }
 
 const getOnePlace = (req, res) => {
     const id = req.params.id;
     Place.findById(id)
-        .then(place => res.status(200).json(place))
-        .catch(err => res.status(404).json({ err: "Can't find this place :<" }));
+        .then(place => { return res.status(200).json(place) })
+        .catch(err => { return res.status(404).json({ err: "Can't find this place :<" }) });
 }
 
 const addPlace = (req, res) => {
