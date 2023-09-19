@@ -8,7 +8,8 @@ const ShowPlaces = () => {
     const [places, setPlaces] = useState([]);
 
     useEffect(() => {
-        axios.get('http://192.168.1.10:5000/')
+        const PORT = process.env.PORT || 5000
+        axios.get(`http://localhost:${PORT}/`)
             .then((res) => {
                 setPlaces(res.data);
             }).catch((err) => {

@@ -28,10 +28,8 @@ app.use('/chat', routerChat);
 
 //server
 const PORT = 5000;
-const HOST = process.env.HOST
-const server = app.listen(PORT, HOST, () => {
-    const host = server.address().address;
-    console.log(`Server is now running on PORT: ${PORT} with host: ${HOST} ${host}`);
+const server = app.listen(PORT, () => {
+    console.log(`Server is now running on PORT: ${PORT} `);
 })
 //database
 connect2DB();
