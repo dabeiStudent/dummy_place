@@ -12,7 +12,7 @@ const UpdatePlaces = () => {
     });
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/${id}`)
+        axios.get(`http://localhost:5000/place/${id}`)
             .then((res) => {
                 setPlace({
                     title: res.data.title,
@@ -36,7 +36,7 @@ const UpdatePlaces = () => {
             description: place.description,
             rating: place.rating
         };
-        axios.post(`http://localhost:5000/update-place/${id}`, data, {
+        axios.post(`http://localhost:5000/place/update-place/${id}`, data, {
             withCredentials: true
         })
             .then((res) => {

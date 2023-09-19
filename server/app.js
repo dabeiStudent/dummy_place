@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 // app.use('/', (req, res) => {
 //     res.render('hello.ejs');
 // })
-app.use('/', routerPlace);
+app.use('/place', routerPlace);
 app.use('/user', routerUser);
 app.use('/chat', routerChat);
 

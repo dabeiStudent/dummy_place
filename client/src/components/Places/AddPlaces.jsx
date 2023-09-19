@@ -17,7 +17,7 @@ const AddPlaces = props => {
     const addNewPlaceHandler = event => {
         event.preventDefault();
 
-        axios.post('http://localhost:5000/create-new-place', place, {
+        axios.post('http://localhost:5000/place/create-new-place', place, {
             withCredentials: true
         })
             .then(res => {

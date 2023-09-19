@@ -9,7 +9,7 @@ const ShowPlaces = () => {
 
     useEffect(() => {
         const PORT = process.env.PORT || 5000
-        axios.get(`/`)
+        axios.get(`/place`)
             .then((res) => {
                 setPlaces(res.data);
             }).catch((err) => {

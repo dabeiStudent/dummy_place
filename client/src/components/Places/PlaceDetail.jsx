@@ -10,7 +10,7 @@ const PlaceDetail = props => {
     const navigate = useNavigate();
     const [place, setPlace] = useState({});
     useEffect(() => {
-        axios.get(`http://localhost:5000/${id}`)
+        axios.get(`http://localhost:5000/place/${id}`)
             .then((res) => {
                 setPlace(res.data);
             }).catch((err) => {
@@ -24,7 +24,7 @@ const PlaceDetail = props => {
         event.preventDefault();
 
         if (window.confirm('Are you sure to delete this place?')) {
-            axios.post(`http://localhost:5000/drop-this-place/${id}`, id, {
+            axios.post(`http://localhost:5000/place/drop-this-place/${id}`, id, {
                 withCredentials: true
             })
                 .then((res) => {
