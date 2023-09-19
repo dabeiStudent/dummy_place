@@ -25,7 +25,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon --quiet server/app.js",
     "client": "npm start --prefix client",
-    "start": "concurrently \"npm run server\" \"npm run client\""
+    "start": "concurrently \"npm run client\" \"npm run server\""
   },
   "keywords": [],
   "author": "",

@@ -9,7 +9,7 @@ const ShowPlaces = () => {
 
     useEffect(() => {
         const PORT = process.env.PORT || 5000
-        axios.get(`https://dummyplace-e1c364821935.herokuapp.com/place`)
+        axios.get(`http://localhost:${PORT}/place`)
             .then((res) => {
                 setPlaces(res.data);
             }).catch((err) => {
